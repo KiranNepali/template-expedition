@@ -31,7 +31,7 @@ export default function Hero({}: Props) {
       <div className="absolute z-10   text-white flex flex-col gap-1 items-center bottom-5 left-[50%] translate-x-[-50%]">
         <Icon
           icon="uil:mouse-alt"
-          className=" w-8 h-8 p-1  object-cover border-2 rounded-full object-center"
+          className=" w-7 h-7   object-cover  rounded-full object-center"
         />
         <span className="font-medium text-sm">Scroll down</span>
       </div>

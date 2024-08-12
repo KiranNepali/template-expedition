@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import FooterImg from "@/public/FooterImg.webp";
+import FooterImg from "@/public/FooterImg.jpg";
 import Link from "next/link";
 
 type Props = {};
