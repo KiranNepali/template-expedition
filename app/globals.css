@@ -1,3 +1,4 @@
+@import url("https://api.fontshare.com/v2/css?f[]=hind@300,400,500,600,700,1&f[]=pilcrow-rounded@400,500,600,700,900,1&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,4 +11,16 @@
 
 body {
   background-color: white;
+}
+
+h1,
+h2,
+h3,
+.heading {
+  font-family: "Pilcrow Rounded", sans-serif;
+}
+
+/* Apply 'Pilcrow Rounded' font to paragraphs and descriptions */
+body {
+  font-family: "Hind", sans-serif;
 }
