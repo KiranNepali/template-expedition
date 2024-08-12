@@ -23,7 +23,7 @@ export default function ExpeditionPackage({}: Props) {
         ></Image>
 
         <div className="relative flex justify-center items-center ">
-          <Icon icon="iconoir:trekking" className=" w-16 h-16 text-white" />
+          {/* <Icon icon="iconoir:trekking" className=" w-16 h-16 text-white" /> */}
           <h1 className="font-bold text-[5vw] text-white uppercase">
             Over 8000 Meters
           </h1>
@@ -62,7 +62,7 @@ export default function ExpeditionPackage({}: Props) {
         <div className="grid grid-cols-4  w-full  gap-5">
           {ExpeditionData.map((item, index) => (
             <Link
-              href={`/expedition/${slugify(item.name)}`}
+              href={`/trip-detail/${slugify(item.name)}`}
               key={index}
               className="w-full"
             >

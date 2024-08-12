@@ -15,7 +15,7 @@ export default function ContacPage({}: Props) {
         <Image
           alt=""
           src={ContactImg}
-          className="w-full absolute   top-0 left-0 h-full object-cover object-center"
+          className="w-full absolute brightness-50 top-0 left-0 h-full object-cover object-center"
         ></Image>
 
         <div className="relative gap-2 z-20 flex flex-col justify-center items-center ">
@@ -27,7 +27,6 @@ export default function ContacPage({}: Props) {
       </div>
 
       {/* contact  */}
-
       <div className="w-10/12 mx-auto py-[5rem] grid grid-cols-8 gap-x-5">
         <div className="col-span-5">
           <div className="grid gap-2 gap-y-3 grid-cols-2">
@@ -98,16 +97,13 @@ export default function ContacPage({}: Props) {
               <span className="font-semibold">Submit</span>
             </button> */}
             <div className="w-full justify-start items-center">
-              <a
-                href="#_"
-                className="relative inline-block px-4 py-2 font-medium group"
-              >
+              <button className="relative inline-block px-4 py-2 font-medium group">
                 <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-zinc-700 group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
                 <span className="absolute inset-0 w-full h-full bg-white border-2 border-zinc-700 group-hover:bg-zinc-700"></span>
                 <span className="relative text-zinc-800 group-hover:text-white">
                   Submit
                 </span>
-              </a>
+              </button>
             </div>
           </div>
         </div>

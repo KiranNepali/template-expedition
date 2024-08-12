@@ -1,3 +1,4 @@
+import Button from "@/components/ui/Button";
 import React from "react";
 
 type Props = {};
@@ -12,7 +13,7 @@ export default function HomeExpedition({}: Props) {
           </h1>
 
           <div className="w-full flex justify-start items-center mt-5">
-            <button className="text-zinc-700 font-medium">View all</button>
+            <Button text="View all" />
           </div>
         </div>
         <div className="col-span-5 overflow-x-scroll gap-5 flex justify-start items-center">
