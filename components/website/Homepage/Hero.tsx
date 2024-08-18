@@ -14,6 +14,14 @@ export default function Hero({}: Props) {
         src={HeroImg}
       ></Image>
 
+      <Image
+        width={5000}
+        height={5000}
+        src="/divider.svg"
+        className="absolute bottom-0 mb-[-3%] left-0 w-full h-[20vh] z-20"
+        alt=""
+      ></Image>
+
       <div className="flex flex-col gap-2 relative justify-center items-center">
         <h1 className="uppercase text-white font-bold   text-[6vw] text-center leading-none">
           Discover Your Next <br /> <span>Expedition</span>
@@ -26,14 +34,14 @@ export default function Hero({}: Props) {
         <span className="border-b-2  border-white mt-10 text-white">
           Get involved
         </span>
-      </div>
 
-      <div className="absolute z-10   text-white flex flex-col gap-1 items-center bottom-5 left-[50%] translate-x-[-50%]">
-        <Icon
-          icon="uil:mouse-alt"
-          className=" w-7 h-7   object-cover  rounded-full object-center"
-        />
-        <span className="font-medium text-sm">Scroll down</span>
+        <div className=" z-10   text-white flex flex-col gap-1 items-center bottom-5 left-[50%] mt-10 ">
+          <Icon
+            icon="uil:mouse-alt"
+            className=" w-7 h-7   object-cover  rounded-full object-center"
+          />
+          <span className="font-medium text-sm">Scroll down</span>
+        </div>
       </div>
     </div>
   );

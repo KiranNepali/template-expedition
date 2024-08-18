@@ -28,7 +28,7 @@ export default function HomeServices({}: Props) {
                 icon
               </span>
               <h2 className="font-bold uppercase text-lg">{item.name}</h2>
-              <p className="text-zinc-700">{item.desc}</p>
+              <p className="text-zinc-700 text-[1vw]">{item.desc}</p>
             </div>
           </>
         ))}
