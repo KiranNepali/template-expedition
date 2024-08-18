@@ -27,8 +27,10 @@ export default function Hero({}: Props) {
           Discover Your Next <br /> <span>Expedition</span>
         </h1>
         <p className="text-center text-zinc-200 w-[70%]">
-          "Join us on thrilling expeditions, uncovering breathtaking landscapes
+          {`
+         "Join us on thrilling expeditions, uncovering breathtaking landscapes
           and unforgettable experiences."
+         `}
         </p>
 
         <span className="border-b-2  border-white mt-10 text-white">
