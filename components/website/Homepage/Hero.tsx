@@ -17,8 +17,8 @@ export default function Hero({}: Props) {
       <Image
         width={5000}
         height={5000}
-        src="/divider.svg"
-        className="absolute bottom-0 mb-[-3%] left-0 w-full h-[20vh] z-20"
+        src="/divider2.svg"
+        className="absolute bottom-0 object-cover object-center  left-[50%] translate-x-[-50%] w-full h-[8vh] z-20"
         alt=""
       ></Image>
 

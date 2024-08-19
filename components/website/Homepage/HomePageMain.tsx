@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Hero from "./Hero";
 import HomeAbout from "./HomeAbout";
 import HomeServices from "./HomeServices";
@@ -6,17 +7,94 @@ import HomeBanner from "./HomeBanner";
 import HomeExpedition from "./HomeExpedition";
 import HomeFaq from "./HomeFaq";
 import HomeCto from "./HomeCto";
+import Image from "next/image";
+import Lenis from "lenis";
 
 type Props = {};
 
 export default function HomePageMain({}: Props) {
+  const [dimension, setDimension] = useState<{ width: number; height: number }>(
+    {
+      width: 0,
+      height: 0,
+    }
+  );
+
+  // lenis scroll
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    const raf = (time: any) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+
+    const resize = () => {
+      setDimension({ width: window.innerWidth, height: window.innerHeight });
+    };
+
+    window.addEventListener("resize", resize);
+    requestAnimationFrame(raf);
+    resize();
+
+    return () => {
+      window.removeEventListener("resize", resize);
+    };
+  }, []);
   return (
     <>
       <Hero />
+
       <div className="w-10/12 mx-auto">
         <HomeAbout />
         <HomeServices />
       </div>
+
+      <div className="overflow-x-hidden w-full">
+        {sections.map((section, index) => (
+          <div
+            key={index}
+            className={`flex justify-center items-center ${
+              index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+            }`}
+          >
+            {/* Render image section */}
+            <div
+              className={`w-[60vw] ${
+                index % 2 === 0 ? "ml-[-20%]" : "mr-[-20%]"
+              } h-screen flex justify-center items-center relative`}
+            >
+              <div className="absolute top-0 left-0 w-[60vw] h-[50vw]">
+                {/* Hero Image */}
+                <Image
+                  src={section.imageSrc}
+                  alt="Hero Image"
+                  className="w-full h-full object-cover object-center"
+                  width={5000}
+                  height={5000}
+                />
+                <Image
+                  alt=""
+                  src={section.brushSrc}
+                  className="w-full absolute top-0 left-0 bg-white mix-blend-screen h-full object-cover object-center"
+                  width={5000}
+                  height={5000}
+                />
+              </div>
+            </div>
+            {/* Render text section */}
+            <div className="w-[40vw] flex justify-center items-start flex-col gap-2">
+              <h1 className="font-semibold uppercase text-[3vw]">
+                {section.textTitle}
+              </h1>
+              <p className="text-[1.5vw] text-zinc-700">
+                {section.textContent}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
       <div className="bg-zinc-100/50 w-full">
         <HomeExpedition />
       </div>
@@ -32,3 +110,25 @@ export default function HomePageMain({}: Props) {
     </>
   );
 }
+
+const sections = [
+  {
+    imageSrc: "/Hero.jpg",
+    brushSrc: "/brush1.png",
+    textTitle: "Title topic",
+    textContent: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Perferendis dignissimos, quia distinctio vel eaque similique 
+    tempore quasi obcaecati suscipit? Sunt. Lorem ipsum dolor sit amet 
+    consectetur adipisicing elit. Esse, voluptates.`,
+  },
+  {
+    imageSrc: "/Hero.jpg",
+    brushSrc: "/brush2.png",
+    textTitle: "Title topic",
+    textContent: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Perferendis dignissimos, quia distinctio vel eaque similique 
+    tempore quasi obcaecati suscipit? Sunt. Lorem ipsum dolor sit amet 
+    consectetur adipisicing elit. Esse, voluptates.`,
+  },
+  // Add more sections as needed
+];
