@@ -14,13 +14,13 @@ export default function Hero({}: Props) {
         src={HeroImg}
       ></Image>
 
-      <Image
+      {/* <Image
         width={5000}
         height={5000}
         src="/divider2.svg"
         className="absolute bottom-0 object-cover object-center  left-[50%] translate-x-[-50%] w-full h-[8vh] z-20"
         alt=""
-      ></Image>
+      ></Image> */}
 
       <div className="flex flex-col gap-2 relative justify-center items-center">
         <h1 className="uppercase text-white font-bold   text-[6vw] text-center leading-none">

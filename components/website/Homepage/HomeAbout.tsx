@@ -5,7 +5,7 @@ type Props = {};
 
 export default function HomeAbout({}: Props) {
   return (
-    <div className="w-full  mb-[5rem]  border-b-2 border-spacing-10  border-dotted  relative">
+    <div className="w-10/12 mx-auto  mb-[5rem]  border-b-2 border-spacing-10  border-dotted  relative">
       <div className="grid w-full grid-cols-2 gap-x-5">
         <div className="relative flex justify-center  items-center">
           {/* Brush Image */}
@@ -21,7 +21,7 @@ export default function HomeAbout({}: Props) {
             <Image
               alt="Brush Stroke"
               src="/brush.avif"
-              className="w-[50vw] h-[40vw] absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] mix-blend-screen"
+              className="w-[50vw]  h-[40vw] absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] mix-blend-screen"
               width={5000}
               height={5000}
             />

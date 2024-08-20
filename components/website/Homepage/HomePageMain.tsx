@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Hero from "./Hero";
 import HomeAbout from "./HomeAbout";
 import HomeServices from "./HomeServices";
@@ -9,6 +9,8 @@ import HomeFaq from "./HomeFaq";
 import HomeCto from "./HomeCto";
 import Image from "next/image";
 import Lenis from "lenis";
+import { Container } from "postcss";
+import { useScroll, useTransform, motion } from "framer-motion";
 
 type Props = {};
 
@@ -41,12 +43,43 @@ export default function HomePageMain({}: Props) {
       window.removeEventListener("resize", resize);
     };
   }, []);
+
+  const container = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start start", "end end"],
+  });
+
+  // Transform for Hero section
+  const heroScale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
+  const heroRotate = useTransform(scrollYProgress, [0, 1], [0, -5]);
+
+  // Opposite Transform for HomeAbout section
+  const aboutScale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const aboutRotate = useTransform(scrollYProgress, [0, 1], [-5, 0]);
+
   return (
     <>
-      <Hero />
+      <div ref={container} className="relative  bg-black">
+        {/* Hero Section */}
+        <motion.div
+          style={{ scale: heroScale, rotate: heroRotate }}
+          className="sticky top-0"
+        >
+          <Hero />
+        </motion.div>
+
+        {/* HomeAbout Section with opposite transformations */}
+        <motion.div
+          style={{ scale: aboutScale, rotate: aboutRotate }}
+          className="w-full h-screen  mx-auto bg-white relative"
+        >
+          <HomeAbout />
+        </motion.div>
+      </div>
 
       <div className="w-10/12 mx-auto">
-        <HomeAbout />
         <HomeServices />
       </div>
 
