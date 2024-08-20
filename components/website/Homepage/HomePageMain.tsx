@@ -11,6 +11,7 @@ import Image from "next/image";
 import Lenis from "lenis";
 import { Container } from "postcss";
 import { useScroll, useTransform, motion } from "framer-motion";
+import Try from "./Try";
 
 type Props = {};
 
@@ -78,6 +79,8 @@ export default function HomePageMain({}: Props) {
           <HomeAbout />
         </motion.div>
       </div>
+
+      <Try />
 
       <div className="w-10/12 mx-auto">
         <HomeServices />
